@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  div.p-4
+    each article in articles
+      div.card.mt-4.ml-4.mb-4.mr-4.m-auto.w-75
+        div.card
+          div.card-body
+            h5.card-title=article.title
+            p.card-text.mb-2=article.text.slice(0,150) + "..."
+            a(href="/readmore/"+article._id, class="btn btn-primary customReadmore") Read More
+            a(href="/favorities/"+article._id, class="btn btn-success") Add to Favorities
